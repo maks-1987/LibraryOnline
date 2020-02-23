@@ -26,7 +26,6 @@ a img {
     border: none;
 }
 
-
 a:link {
     color:#414958;
     text-decoration: underline;
@@ -46,7 +45,6 @@ a:hover, a:active, a:focus {
     height:800px;
 }
 
-
 .header {
     background-color: #FFFFFF;
 }
@@ -63,7 +61,6 @@ a:hover, a:active, a:focus {
     float: left;
 }
 
-
 ul.nav {
     list-style: none;
 
@@ -76,8 +73,6 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     background-color: #FFFFFF;
     color: #999;
 }
-
-
 
 .search_form{
     margin:20px;
@@ -103,8 +98,7 @@ ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
     text-align: left;
     padding-top: 50px;
 }
-
-
+/*Эта кнопка сгенерирована с сайта генератора кнопок*/
 .search_button {
     -moz-box-shadow:inset 0 1px 0 0 #bbdaf7;
     -webkit-box-shadow:inset 0 1px 0 0 #bbdaf7;

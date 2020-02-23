@@ -1,6 +1,8 @@
+<%--<%@ taglib prefix="c"  tagdir="http://oracle.com/jsp/jstl/core/"%>--%>
 <%@ page import="webBeans.AuthorList" %>
 <%@ page import="webBeans.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,29 +12,36 @@
 <body>
 <div class="container">
     <div class="header">
-        <img src="../images/Index_library.jpg" alt="LOGO" width="150" height="100"/>
-        <form class="search_form" name="search_form" method="post">
-            <img src="../images/search.jpg" alt="search"/>
+        <div class="logo">
+        <img src="../images/library.png" alt="LOGO" name="logo"/>
+        </div>
+
+        <div class="descr">
+            <h3>Онлайн библиотека проекта</h3>
+        </div>
+        <div class="search_form">
+        <form name="search_form" method="post">
             <input type="text" name="search_String" value="" size="70"/>
-            <input type="submit" name="search_button" value="Поиск"/>
+            <input class="search_button" type="submit" name="search_button" value="Поиск"/>
             <select name="search_option">
-                <option>Название</option>
+                <option>Название книги</option>
                 <option>Автор</option>
             </select>
         </form>
+        </div>
     </div><%--end header div--%>
 
-    <div class="sidebar">
+    <div class="sidebar1">
         <h3>Список авторов</h3>
         <ul class="nav">
+            <jsp:useBean id="authorList" class="webBeans.AuthorList" scope="application"/>
+<%--            <c:forEach var="author" items="${authorList.getAuthorList()}">--%>
+<%--                <li><a href="#">${author.name}</a> </li>--%>
+<%--            </c:forEach>--%>
             <%
-                AuthorList authorList = new AuthorList();
-                for (Author autor : authorList.getAuthorList()) {
+                for (Author author:authorList.getAuthorList()) {
             %>
-            <li>
-                <a href="#"><%=autor.getName()%>
-                </a>
-            </li>
+            <li><a href="#"><%=author.getName()%></a></li>
             <%}%>
         </ul>
         <p>&nbsp;</p><%--это неразрывный пробел, чтобы наприм Фамилия и инициаля не печатались на разн строках--%>
