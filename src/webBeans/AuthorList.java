@@ -20,7 +20,7 @@ public class AuthorList {
         try {
             connection = Database.getConnection();
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("select * from author");
+            resultSet = statement.executeQuery("select * from author order by fio");
             while (resultSet.next()) {
                 Author author = new Author();
                 author.setName(resultSet.getString("fio"));

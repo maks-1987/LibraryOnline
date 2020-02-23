@@ -1,5 +1,4 @@
-<%--<%@ taglib prefix="c"  tagdir="http://oracle.com/jsp/jstl/core/"%>--%>
-<%@ page import="webBeans.AuthorList" %>
+<%--<%@ page import="webBeans.AuthorList" %>--%>
 <%@ page import="webBeans.Author" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
@@ -35,9 +34,6 @@
         <h3>Список авторов</h3>
         <ul class="nav">
             <jsp:useBean id="authorList" class="webBeans.AuthorList" scope="application"/>
-<%--            <c:forEach var="author" items="${authorList.getAuthorList()}">--%>
-<%--                <li><a href="#">${author.name}</a> </li>--%>
-<%--            </c:forEach>--%>
             <%
                 for (Author author:authorList.getAuthorList()) {
             %>
